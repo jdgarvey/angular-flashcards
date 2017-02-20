@@ -18,7 +18,7 @@ import { FlashcardComponent } from './flashcard/flashcard.component';
     FormsModule,
     HttpModule,
     MaterialModule,
-    MarkdownModule.forRoot()
+    MarkdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
