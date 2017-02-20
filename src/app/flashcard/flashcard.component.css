@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+md-card {
+  width: 50%;
+}
+md-card-actions {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid gray;
+}

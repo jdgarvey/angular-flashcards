@@ -4,15 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { MaterialModule } from "@angular/material";
+import { MarkdownModule } from 'angular2-markdown';
+import { FlashcardComponent } from './flashcard/flashcard.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FlashcardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MaterialModule,
+    MarkdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
