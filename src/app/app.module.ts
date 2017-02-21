@@ -5,8 +5,9 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from "@angular/material";
-import { MarkdownModule } from 'angular2-markdown';
+
 import { FlashcardComponent } from './flashcard/flashcard.component';
+import { FlashcardService } from './flashcard/flashcard.service';
 
 @NgModule({
   declarations: [
@@ -17,10 +18,9 @@ import { FlashcardComponent } from './flashcard/flashcard.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule,
-    MarkdownModule
+    MaterialModule
   ],
-  providers: [],
+  providers: [ FlashcardService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

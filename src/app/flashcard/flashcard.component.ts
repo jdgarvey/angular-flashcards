@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from "@angular/http";
+import { FlashcardService } from "./flashcard.service";
 
 @Component({
   selector: 'app-flashcard',
@@ -7,9 +7,12 @@ import { Http } from "@angular/http";
   styleUrls: ['./flashcard.component.css']
 })
 export class FlashcardComponent implements OnInit {
+  flashcards: [any];
+  currentFlashcard: any;
+  constructor(private flashcardService: FlashcardService) { }
 
-  constructor(private http: Http) { }
-
-  ngOnInit() {}
-
+  ngOnInit() {
+    this.flashcards = this.flashcardService.getFlashcards();
+    this.currentFlashcard = this.flashcards[0];
+  }
 }

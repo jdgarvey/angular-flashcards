@@ -2,6 +2,19 @@
   display: flex;
   justify-content: center;
 }
+:host /deep/ h1 {
+  background: #673ab7;
+  margin: -24px -24px 0;
+  padding: 24px;
+  color: white;
+  font-weight:lighter;
+}
+:host /deep/ code {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #2b2b2b;
+}
 md-card {
   width: 50%;
 }
