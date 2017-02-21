@@ -4,7 +4,6 @@ import { flashcards } from './flashcards';
 const highlightJS = require('highlight.js');
 const marked = require('marked');
 marked.setOptions({
-  gfm: true,
   langPrefix: 'hljs ',
   highlight: function (code) {
     return highlightJS.highlightAuto(code).value;
@@ -13,7 +12,7 @@ marked.setOptions({
 
 const context = require.context('raw-loader!../../assets/markdown', true, /\.md$/);
 flashcards.forEach(card => {
-  card.value = marked(context(card.url));
+  card.value = marked(context(`./${card.url}`));
 });
 
 export { flashcards };

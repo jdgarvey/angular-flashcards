@@ -1,4 +1,4 @@
-<h1 class="question">What is a an SPA (Single page application)?</h1>
+# What is a an SPA (Single page application)?
 
 Single-Page Applications (SPAs) are web applications that load a single HTML page and dynamically update that page as the user interacts with the app. SPAs use AJAX and HTML to create fluid and responsive web apps, without constant page reloads. However, this means much of the work happens on the client side, in JavaScript.
 

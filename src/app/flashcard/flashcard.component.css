@@ -9,7 +9,7 @@
   color: white;
   font-weight:lighter;
 }
-:host /deep/ .markdown:not(.show-answer) *:not(.question) {
+:host /deep/ .markdown:not(.show-answer) *:not(:first-child) {
   display: none;
 }
 :host /deep/ code {
