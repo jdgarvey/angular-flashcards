@@ -7,7 +7,7 @@
       class="markdown"
     ></div>
   </md-card-content>
-  <hr color="accent">
+  <hr color="accent" *ngIf="shouldShowAnswer">
   <md-card-actions>
     <button [disabled]="disablePreviousButton()" md-button color="primary" (click)="navigate(-1)">Previous</button>
     <button md-raised-button color="accent" (click)="toggleAnswer()">
