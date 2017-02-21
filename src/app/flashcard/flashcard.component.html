@@ -10,7 +10,9 @@
   <hr color="accent">
   <md-card-actions>
     <button [disabled]="disablePreviousButton()" md-button color="primary" (click)="navigate(-1)">Previous</button>
-    <button md-raised-button color="accent" (click)="showAnswer()">Show Answer</button>
+    <button md-raised-button color="accent" (click)="toggleAnswer()">
+      {{shouldShowAnswer ? 'Hide Answer' : 'Show Answer'}}
+    </button>
     <button [disabled]="disableNextButton()" md-button color="primary" (click)="navigate(1)">Next</button>
   </md-card-actions>
 </md-card>

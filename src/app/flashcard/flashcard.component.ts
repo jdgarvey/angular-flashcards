@@ -33,7 +33,7 @@ export class FlashcardComponent implements OnInit {
     this.shouldShowAnswer = false;
   }
 
-  showAnswer() {
-    this.shouldShowAnswer = true;
+  toggleAnswer() {
+    this.shouldShowAnswer = !this.shouldShowAnswer;
   }
 }
