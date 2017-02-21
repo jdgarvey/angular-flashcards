@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FlashcardService } from "./flashcard.service";
+import { flashcards } from "./flashcard.loader";
 
 @Component({
   selector: 'app-flashcard',
@@ -8,11 +8,26 @@ import { FlashcardService } from "./flashcard.service";
 })
 export class FlashcardComponent implements OnInit {
   flashcards: [any];
-  currentFlashcard: any;
-  constructor(private flashcardService: FlashcardService) { }
+  currentFlashcardIndex: number = 0;
+  constructor() { }
 
   ngOnInit() {
-    this.flashcards = this.flashcardService.getFlashcards();
-    this.currentFlashcard = this.flashcards[0];
+    this.flashcards = flashcards.sort((a, b) => {
+      if (a.rank < b.rank) return -1;
+      if (a.rank > b.rank) return 1;
+      return 0;
+    });
+  }
+
+  disablePreviousButton() {
+    return this.currentFlashcardIndex <= 0;
+  }
+
+  disableNextButton() {
+    return this.currentFlashcardIndex >= this.flashcards.length - 1;
+  }
+
+  navigate(incrementor) {
+    this.currentFlashcardIndex = this.currentFlashcardIndex + incrementor;
   }
 }

@@ -4,7 +4,7 @@
 }
 :host /deep/ h1 {
   background: #673ab7;
-  margin: -24px -24px 0;
+  margin: -24px -24px 0 !important;
   padding: 24px;
   color: white;
   font-weight:lighter;

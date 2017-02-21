@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from "@angular/material";
 
 import { FlashcardComponent } from './flashcard/flashcard.component';
-import { FlashcardService } from './flashcard/flashcard.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,7 @@ import { FlashcardService } from './flashcard/flashcard.service';
     HttpModule,
     MaterialModule
   ],
-  providers: [ FlashcardService ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

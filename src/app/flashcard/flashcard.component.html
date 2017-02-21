@@ -1,15 +1,11 @@
 <md-card>
-  <!--<div class="heading">-->
-    <!--<md-card-title>	Card title</md-card-title>-->
-  <!--</div>-->
-  <!--<md-card-subtitle>	Card subtitle </md-card-subtitle>-->
-  <!--<md-card-content>-->
-    <!--<div Markdown path="/assets/flashcards/what-is-angular-js.md"></div>-->
-  <!--</md-card-content>-->
-  <div [innerHtml]="currentFlashcard.value"></div>
+  <md-card-content>
+    <h1 *ngIf="!flashcards[currentFlashcardIndex]">No flashcard found</h1>
+    <div [innerHtml]="flashcards[currentFlashcardIndex]?.value"></div>
+  </md-card-content>
 
   <md-card-actions>
-    <button md-button color="primary">Previous</button>
-    <button md-button color="primary">Next</button>
+    <button [disabled]="disablePreviousButton()" md-button color="primary" (click)="navigate(-1)">Previous</button>
+    <button [disabled]="disableNextButton()" md-button color="primary" (click)="navigate(1)">Next</button>
   </md-card-actions>
 </md-card>

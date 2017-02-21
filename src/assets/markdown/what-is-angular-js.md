@@ -19,5 +19,5 @@ Let's start using AngularJS. What would be the first step that you need to do? T
 ```html
 <script src="~/Script/angular.min.js"></script> 
 ```
-For more details, click the link
-Basics of AngularJS
+For more details, click the link <br>
+[Basics of AngularJS](http://www.c-sharpcorner.com/UploadFile/65794e/basics-of-angularjs/)
