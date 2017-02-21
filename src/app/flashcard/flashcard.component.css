@@ -9,6 +9,9 @@
   color: white;
   font-weight:lighter;
 }
+:host /deep/ .markdown:not(.show-answer) *:not(.question) {
+  display: none;
+}
 :host /deep/ code {
   display: block;
   overflow-x: auto;

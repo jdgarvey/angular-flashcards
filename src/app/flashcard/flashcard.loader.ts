@@ -4,6 +4,7 @@ import { flashcards } from './flashcards';
 const highlightJS = require('highlight.js');
 const marked = require('marked');
 marked.setOptions({
+  gfm: true,
   langPrefix: 'hljs ',
   highlight: function (code) {
     return highlightJS.highlightAuto(code).value;

@@ -9,6 +9,7 @@ import { flashcards } from "./flashcard.loader";
 export class FlashcardComponent implements OnInit {
   flashcards: [any];
   currentFlashcardIndex: number = 0;
+  shouldShowAnswer: boolean = false;
   constructor() { }
 
   ngOnInit() {
@@ -29,5 +30,10 @@ export class FlashcardComponent implements OnInit {
 
   navigate(incrementor) {
     this.currentFlashcardIndex = this.currentFlashcardIndex + incrementor;
+    this.shouldShowAnswer = false;
+  }
+
+  showAnswer() {
+    this.shouldShowAnswer = true;
   }
 }
