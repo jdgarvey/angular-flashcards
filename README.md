@@ -1,4 +1,5 @@
 # AngularFlashcards
+![image](https://cloud.githubusercontent.com/assets/1544557/23147448/32a4a296-f79c-11e6-86de-f62022d6b36b.png)
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
