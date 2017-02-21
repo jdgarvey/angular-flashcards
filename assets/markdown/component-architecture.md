@@ -1,0 +1,1 @@
+# What is component architecture?
