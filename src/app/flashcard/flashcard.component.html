@@ -1,18 +1,23 @@
-<md-card>
-  <md-card-content>
-    <h1 *ngIf="!flashcards[currentFlashcardIndex]">No flashcard found</h1>
-    <div
-      [innerHtml]="flashcards[currentFlashcardIndex]?.value"
-      [ngClass]="{'show-answer': shouldShowAnswer}"
-      class="markdown"
-    ></div>
-  </md-card-content>
-  <hr color="accent" *ngIf="shouldShowAnswer">
-  <md-card-actions>
-    <button [disabled]="disablePreviousButton()" md-button color="primary" (click)="navigate(-1)">Previous</button>
-    <button md-raised-button color="accent" (click)="toggleAnswer()">
-      {{shouldShowAnswer ? 'Hide Answer' : 'Show Answer'}}
-    </button>
-    <button [disabled]="disableNextButton()" md-button color="primary" (click)="navigate(1)">Next</button>
-  </md-card-actions>
-</md-card>
+<button (click)="toggleSideNav()" md-button color="primary">
+  <md-icon>menu</md-icon>
+</button>
+<div class="center">
+  <md-card>
+    <md-card-content>
+      <h1 *ngIf="!flashcards[currentFlashcardIndex]">No flashcard found</h1>
+      <div
+        [innerHtml]="flashcards[currentFlashcardIndex]?.value"
+        [ngClass]="{'show-answer': shouldShowAnswer}"
+        class="markdown"
+      ></div>
+    </md-card-content>
+    <hr color="accent" *ngIf="shouldShowAnswer">
+    <md-card-actions>
+      <button [disabled]="disablePreviousButton()" md-button color="primary" (click)="navigate(-1)">Previous</button>
+      <button md-raised-button color="accent" (click)="toggleAnswer()">
+        {{shouldShowAnswer ? 'Hide Answer' : 'Show Answer'}}
+      </button>
+      <button [disabled]="disableNextButton()" md-button color="primary" (click)="navigate(1)">Next</button>
+    </md-card-actions>
+  </md-card>
+</div>

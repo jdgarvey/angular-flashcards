@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { flashcards } from "./flashcard.loader";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router, NavigationEnd } from "@angular/router";
 
 @Component({
   selector: 'app-flashcard',
@@ -7,17 +7,22 @@ import { flashcards } from "./flashcard.loader";
   styleUrls: ['./flashcard.component.css']
 })
 export class FlashcardComponent implements OnInit {
-  flashcards: [any];
+  @Input() flashcards: [any];
+  @Output() sidenavToggle: EventEmitter<any> = new EventEmitter();
   currentFlashcardIndex: number = 0;
   shouldShowAnswer: boolean = false;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.flashcards = flashcards.sort((a, b) => {
-      if (a.rank < b.rank) return -1;
-      if (a.rank > b.rank) return 1;
-      return 0;
-    });
+    this.router.events
+      .filter(event => event instanceof NavigationEnd)
+      .subscribe(event => {
+        const currentFlashCard = this.flashcards.find(card => {
+          return event.url.includes(card.url);
+        });
+        this.currentFlashcardIndex = currentFlashCard ? this.flashcards.indexOf(currentFlashCard) : 0;
+      })
+
   }
 
   disablePreviousButton() {
@@ -35,5 +40,9 @@ export class FlashcardComponent implements OnInit {
 
   toggleAnswer() {
     this.shouldShowAnswer = !this.shouldShowAnswer;
+  }
+
+  toggleSideNav() {
+    this.sidenavToggle.emit();
   }
 }

@@ -1,6 +1,5 @@
 :host {
-  display: flex;
-  justify-content: center;
+  margin: 8px 0;
 }
 :host /deep/ h1 {
   background: #673ab7;
@@ -17,6 +16,10 @@
   overflow-x: auto;
   padding: 0.5em;
   background: #2b2b2b;
+}
+.center {
+  display: flex;
+  justify-content: center;
 }
 md-card {
   width: 50%;
