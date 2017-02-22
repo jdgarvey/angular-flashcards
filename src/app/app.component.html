@@ -3,11 +3,10 @@
     <button md-button (click)="sidenav.toggle()">
       <md-icon>menu</md-icon>
     </button>
-    <ul>
-      <li *ngFor="let card of flashcards">
-        <a href="" (click)="goToUrl(card.url); $event.preventDefault()">{{card.url}}</a>
-      </li>
-    </ul>
+    <hr>
+    <div class="nav" *ngFor="let card of flashcards">
+      <button md-button (click)="goToUrl(card.url); $event.preventDefault()">{{card.url}}</button>
+    </div>
   </md-sidenav>
   <app-flashcard (sidenavToggle)="sidenav.toggle()" [flashcards]="flashcards"></app-flashcard>
 </md-sidenav-container>
